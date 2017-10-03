@@ -1,0 +1,8 @@
+import { combineReducers } from 'redux';
+import user from './reducer_user';
+import reminders from './reducer_reminders';
+
+export default combineReducers({
+    user,
+    reminders
+});
