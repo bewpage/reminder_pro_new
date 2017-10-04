@@ -11,3 +11,4 @@ const config = {
 
 export const firebaseApp = firebase.initializeApp(config);
 export const reminderRef = firebase.database().ref('reminders');
+export const completeReminderRef = firebase.database().ref('completeReminder');

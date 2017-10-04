@@ -55,7 +55,7 @@ class AddReminder extends Component{
 
 function mapStateToProps(state){
     const { user } = state;
-    console.log('state in addReminder file', state);
+    // console.log('state in addReminder file', state);
     return {
         user
     }
