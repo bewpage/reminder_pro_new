@@ -20,10 +20,7 @@ class AddReminder extends Component{
 
     submitReminder = (event) => {
         event.preventDefault();
-        // console.log('this is state', this.state);
         const { text, dueDate } = this.state;
-        // console.log('text', text);
-        // console.log('dueDate', dueDate);
         reminderRef.push({text, dueDate});
     };
 
@@ -55,7 +52,6 @@ class AddReminder extends Component{
 
 function mapStateToProps(state){
     const { user } = state;
-    // console.log('state in addReminder file', state);
     return {
         user
     }

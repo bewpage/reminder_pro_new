@@ -17,31 +17,53 @@ class ReminderList extends Component{
                 reminders.push({dueDate, text, serverKey});
             });
             this.props.setReminders(reminders);
-        })
+        });
     }
 
+    componentDidUpdate(){
+        this.renderAlert();
+    }
+
+
     sortByDate(e){
-        // const reminders = this.props.reminders;
-        // console.log('old reminders', reminders);
-        const newReminders = [].concat(e).sort((a, b) => moment.utc(a.dueDate).diff(moment.utc(b.dueDate)));
-        // console.log('sorted newReminders', newReminders);
+        let newReminders = [].concat(e).sort((a, b) => moment.utc(a.dueDate).diff(moment.utc(b.dueDate)));
         return newReminders;
     };
 
+    renderAlert(){
+        let newRemindersAlert = this.props.reminders;
+
+        newRemindersAlert.map(date => {
+            let id = date.serverKey;
+            let reminderDate = date.dueDate;
+            let liElement = ReactDOM.findDOMNode(this.refs[id]);
+            console.log('liElement', liElement);
+            if(moment().isSameOrBefore(reminderDate)){
+                return liElement.setAttribute('class', 'list-group-item green');
+            }
+            else{
+                return liElement.setAttribute('class', 'list-group-item alert');
+            }
+        });
+    }
+
+
     render(){
-        console.log('this.props.reminders', this.props.reminders);
-        const remindersArray = this.props.reminders
+        const remindersArray = this.props.reminders;
         const remindersInDateOrder = this.sortByDate(remindersArray);
-        // console.log('remindersInDateOrder', remindersInDateOrder);
         return(
-            <div style={{margin: '5px'}}>
+            <div className='space'>
                 <h4>Reminder List</h4>
-                <div className='row'>
+                <div className='row space'>
                     <ul className='list-group col-sm-4'>
                         {
                             remindersInDateOrder.map((reminder, index) => {
+                                const { serverKey } = reminder;
                                 return (
-                                        <ReminderItem key={index} reminder={reminder} />
+                                        <ReminderItem key={index}
+                                                      reminder={reminder}
+                                                      ref={serverKey}
+                                        />
                                 )
                             })
                         }
@@ -53,7 +75,6 @@ class ReminderList extends Component{
 }
 
 function mapStateToProps(state){
-    console.log('state in Reminder List: ', state);
     const { reminders } = state;
     return {
         reminders

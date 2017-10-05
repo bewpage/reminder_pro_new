@@ -7,6 +7,8 @@ import ReminderList from './ReminderList';
 
 
 class App extends Component{
+
+
     signOut(){
         firebaseApp.auth().signOut();
     }
@@ -31,7 +33,6 @@ class App extends Component{
 }
 
 function mapStateToProps(state){
-    console.log('state in APP component', state);
     return {}
 }
 

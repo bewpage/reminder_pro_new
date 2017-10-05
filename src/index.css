@@ -22,3 +22,15 @@
     color: #1fb7ff;
     font-weight: bold;
 }
+
+.alert{
+    border: 2px solid #ff0000;
+}
+
+.green{
+    border: 1px solid #008000;
+}
+
+.space{
+    margin: 5px;
+}

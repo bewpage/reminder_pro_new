@@ -5,20 +5,22 @@ import { completeReminderRef, reminderRef } from "../firebase";
 
 class ReminderItem extends Component{
 
+
     completeReminder(){
         const { email } = this.props.user;
         const { text, serverKey } = this.props.reminder;
-        // console.log('reminders clicked', this.props.reminder.serverKey);
         reminderRef.child(serverKey).remove();
         completeReminderRef.push({email, text}); //add time stamp for completed task
     }
+
 
 
     render(){
         const { dueDate, text } = this.props.reminder;
         const { email } = this.props.user;
         return(
-            <li className='list-group-item'>
+            <li className='list-group-item'
+            >
                 <div className='delete-button'
                      onClick={()=> this.completeReminder()}
                 >&#x2715;</div>
@@ -35,7 +37,6 @@ class ReminderItem extends Component{
 
 function mapStateToProps(state){
     const { user } = state;
-    // console.log('state in reminder item', state);
     return {
         user
     }
