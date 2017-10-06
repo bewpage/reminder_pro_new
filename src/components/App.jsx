@@ -4,6 +4,8 @@ import {firebaseApp} from "../firebase";
 
 import AddReminder from './AddReminder';
 import ReminderList from './ReminderList';
+import CompleteReminderList from "./CompleteReminderList";
+
 
 
 class App extends Component{
@@ -20,7 +22,10 @@ class App extends Component{
                 <hr/>
                 <AddReminder />
                 <hr/>
-                <ReminderList/>
+                <div className='row space'>
+                    <ReminderList/>
+                    <CompleteReminderList/>
+                </div>
                 <hr/>
                 <button className='btn btn-danger'
                         onClick={() => this.signOut()}

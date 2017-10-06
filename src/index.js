@@ -6,6 +6,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import {firebaseApp} from "./firebase";
 import reducer from './reducers';
 import { logUser } from './actions';
+import { completedTime } from './actions';
 
 
 import App from './components/App';
@@ -19,10 +20,12 @@ const store = createStore(reducer);
 firebaseApp.auth().onAuthStateChanged(user => {
     if(user){
         const { email } = user;
+        //const { nowTime } = finishedTime;
         // console.log('user has signed in or up', user);
-        // console.log('emial from DB', email);
         browserHistory.push('/app');
         store.dispatch(logUser(email));
+        //store.dispatch(completedTime());
+        // console.log('index', user);
     }else{
         // console.log('user has signed out or still needs to sign in.');
         browserHistory.replace('/signin');

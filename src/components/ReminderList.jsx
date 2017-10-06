@@ -37,7 +37,7 @@ class ReminderList extends Component{
             let id = date.serverKey;
             let reminderDate = date.dueDate;
             let liElement = ReactDOM.findDOMNode(this.refs[id]);
-            console.log('liElement', liElement);
+            // console.log('liElement', liElement);
             if(moment().isSameOrBefore(reminderDate)){
                 return liElement.setAttribute('class', 'list-group-item green');
             }
@@ -52,10 +52,10 @@ class ReminderList extends Component{
         const remindersArray = this.props.reminders;
         const remindersInDateOrder = this.sortByDate(remindersArray);
         return(
-            <div className='space'>
+            <div className='col-sm-6'>
                 <h4>Reminder List</h4>
-                <div className='row space'>
-                    <ul className='list-group col-sm-4'>
+                <div>
+                    <ul className='list-group'>
                         {
                             remindersInDateOrder.map((reminder, index) => {
                                 const { serverKey } = reminder;

@@ -9,13 +9,17 @@ class ReminderItem extends Component{
     completeReminder(){
         const { email } = this.props.user;
         const { text, serverKey } = this.props.reminder;
+        const nowTime = moment().toString();
+
         reminderRef.child(serverKey).remove();
-        completeReminderRef.push({email, text}); //add time stamp for completed task
+        completeReminderRef.push({email, text, nowTime});
     }
 
 
 
     render(){
+        console.log('this.props.user ', this.props.user);
+        // console.log('this.props.reminder ', this.props.reminder);
         const { dueDate, text } = this.props.reminder;
         const { email } = this.props.user;
         return(
