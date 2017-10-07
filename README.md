@@ -4,7 +4,7 @@ It is an updated version of reminder pro app with new functionality.
 This project was bootstrapped with - Create React App -
 
 ### Try it out
-Here's a link of the deployment on gh-pages [live preview](https://bewpage.github.io/reminder-pro/)
+Here's a link of the deployment on gh-pages [live preview](https://bewpage.github.io/Reminder_Pro_new/)
 
 ### Stack
 > **React**  (bootstrapped with **create-react-app**)  
