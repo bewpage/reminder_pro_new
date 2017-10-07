@@ -24,28 +24,30 @@ class AddReminder extends Component{
         reminderRef.push({text, dueDate});
     };
 
+
+
     render(){
         return(
-            <div style={{margin: '5px'}}>
-                <h4>Add Reminder</h4>
-                <div className='form-inline'>
-                    <div className='form-group'>
-                        <input type="text"
-                               className='form-control'
-                               placeholder='I have to ...'
-                               onChange={event => this.handleAnyInputChange(event, 'text')}
-                        />
-                        <input type="datetime-local"
-                               className='form-control'
-                               onChange={event => this.handleAnyInputChange(event, 'dueDate')}
-                        />
-                        <button className='btn btn-success'
-                                type='button'
-                                onClick={this.submitReminder}
-                        >Submit</button>
+                <div className='col-sm-12'>
+                    <h4 className='app_subtitle'>Add Reminder</h4>
+                    <div className='form-inline app_center'>
+                        <div className='form-group border_box'>
+                            <input type="text"
+                                   className='form-control'
+                                   placeholder='I have to ...'
+                                   onChange={event => this.handleAnyInputChange(event, 'text')}
+                            />
+                            <input type="datetime-local"
+                                   className='form-control'
+                                   onChange={event => this.handleAnyInputChange(event, 'dueDate')}
+                            />
+                            <button className='btn btn-success'
+                                    type='button'
+                                    onClick={this.submitReminder}
+                            >Submit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }

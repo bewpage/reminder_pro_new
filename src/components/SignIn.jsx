@@ -55,6 +55,7 @@ class SignIn extends Component {
                     >Sign In</button>
                 </div>
                 <div><Link to={'/signup'}>Sign up instead</Link></div>
+                <div><Link to={'/reset'}>Reset password</Link></div>
             </div>
         )
     }

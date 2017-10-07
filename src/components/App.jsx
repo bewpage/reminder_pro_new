@@ -17,21 +17,35 @@ class App extends Component{
 
     render(){
         return(
-            <div className='app'>
-                <h3 className='app-title'><strong>Reminder Pro New</strong></h3>
-                <hr/>
-                <AddReminder />
-                <hr/>
-                <div className='row space'>
-                    <ReminderList/>
-                    <CompleteReminderList/>
+            <div className='border_box'>
+                <div className='container border_box app_header'>
+                    <h3 className='app-title'><strong>Reminder Pro New</strong></h3>
+                    <hr/>
                 </div>
-                <hr/>
-                <button className='btn btn-danger'
-                        onClick={() => this.signOut()}
-                >
-                    Sign Out
-                </button>
+                <div className='container border_box'>
+                    <div className='row space'>
+                        <div className='col-sm-12'>
+                            <button className='btn btn-danger'
+                                    onClick={() => this.signOut()}
+                            >
+                                Sign Out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className='container border_box'>
+                    <div className='row space'>
+                        <AddReminder />
+                    </div>
+                    <hr/>
+                </div>
+                <div className='container border_box'>
+                    <div className='row'>
+                        <ReminderList/>
+                        <CompleteReminderList/>
+                    </div>
+                    <hr/>
+                </div>
             </div>
         )
     }

@@ -1,6 +1,14 @@
-.app{
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/*.border_box{*/
+    /*border: 1px solid red;*/
+/*}*/
+
+.app_header{
     padding-top: 20px;
-    align-items: center;
 }
 
 .app-title{
@@ -8,8 +16,14 @@
     text-align: center;
 }
 
-.title-reminder{
+.app_subtitle{
     font-size: 20px;
+    text-align: center;
+}
+
+.app_center{
+    margin: auto;
+    width: 50%;
 }
 
 .delete-button{
@@ -29,8 +43,4 @@
 
 .green{
     border: 1px solid #008000;
-}
-
-.space{
-    margin: 5px;
 }

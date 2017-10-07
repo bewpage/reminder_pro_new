@@ -53,7 +53,7 @@ class ReminderList extends Component{
         const remindersInDateOrder = this.sortByDate(remindersArray);
         return(
             <div className='col-sm-6'>
-                <h4>Reminder List</h4>
+                <h4 className='app_subtitle'>Reminder List</h4>
                 <div>
                     <ul className='list-group'>
                         {

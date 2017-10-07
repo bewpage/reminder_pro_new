@@ -27,10 +27,10 @@ class CompleteReminderList extends Component {
 
     render(){
         return(
-            <div className='list-group col-sm-6'>
-                <h4>Complete Reminder List</h4>
+            <div className='col-sm-6'>
+                <h4 className='app_subtitle'>Complete Reminder List</h4>
                 <div>
-                    <ul>
+                    <ul className='list-group'>
                         {
                             this.props.completeReminders.map((completeTask, index) => {
                                 return (
