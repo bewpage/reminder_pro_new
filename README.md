@@ -18,4 +18,8 @@ Here's a link of the deployment on gh-pages [live preview](https://bewpage.githu
 - Authentication: allows users to sign up, and sign into an application with information such as an email, password, and displayName.
 - Passed event alert.
 - All entries are displayed in date order.
-- Firebase: allows for applications to have real-time databases as well as full authentication.
+- Firebase: real-time databases as well as full authentication.
+- reset password method to change their authentication information.
+### next things to do:
+- Create user teams to assign goals to specific teams.
+- Have a feed of signed in users and assign goals to specific users.
