@@ -31,7 +31,7 @@ class AddReminder extends Component{
                 <div className='col-sm-12'>
                     <h4 className='app_subtitle'>Add Reminder</h4>
                     <div className='form-inline app_center'>
-                        <div className='form-group border_box'>
+                        <div className='form-group'>
                             <input type="text"
                                    className='form-control'
                                    placeholder='I have to ...'

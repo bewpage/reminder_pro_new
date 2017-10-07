@@ -36,26 +36,28 @@ class SignIn extends Component {
 
     render(){
         return(
-            <div className='form-inline'>
-                <h2>Sign In</h2>
-                <div className='form-group'>
-                    <input type="text"
-                           className='form-control'
-                           placeholder='email'
-                           onChange={event => this.handleAnyInputChange(event, 'email')}
-                    />
-                    <input type="password"
-                           className='form-control'
-                           placeholder='paswword'
-                           onChange={event => this.handleAnyInputChange(event, 'password')}
-                    />
-                    <button className='btn btn-primary'
-                            type='button'
-                            onClick={this.signIn}
-                    >Sign In</button>
+            <div className='container'>
+                <div className='form-inline app_center'>
+                    <h2 className='app-title'>Sign In</h2>
+                    <div className='form-group'>
+                        <input type="text"
+                               className='form-control'
+                               placeholder='email'
+                               onChange={event => this.handleAnyInputChange(event, 'email')}
+                        />
+                        <input type="password"
+                               className='form-control'
+                               placeholder='paswword'
+                               onChange={event => this.handleAnyInputChange(event, 'password')}
+                        />
+                        <button className='btn btn-primary'
+                                type='button'
+                                onClick={this.signIn}
+                        >Sign In</button>
+                    </div>
+                    <div><Link to={'/signup'}>Sign up instead</Link></div>
+                    <div><Link to={'/reset'}>Reset password</Link></div>
                 </div>
-                <div><Link to={'/signup'}>Sign up instead</Link></div>
-                <div><Link to={'/reset'}>Reset password</Link></div>
             </div>
         )
     }

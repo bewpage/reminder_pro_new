@@ -17,13 +17,13 @@ class App extends Component{
 
     render(){
         return(
-            <div className='border_box'>
-                <div className='container border_box app_header'>
+            <div>
+                <div className='container app_header'>
                     <h3 className='app-title'><strong>Reminder Pro New</strong></h3>
                     <hr/>
                 </div>
-                <div className='container border_box'>
-                    <div className='row space'>
+                <div className='container'>
+                    <div className='row'>
                         <div className='col-sm-12'>
                             <button className='btn btn-danger'
                                     onClick={() => this.signOut()}
@@ -33,13 +33,13 @@ class App extends Component{
                         </div>
                     </div>
                 </div>
-                <div className='container border_box'>
-                    <div className='row space'>
+                <div className='container'>
+                    <div className='row'>
                         <AddReminder />
                     </div>
                     <hr/>
                 </div>
-                <div className='container border_box'>
+                <div className='container'>
                     <div className='row'>
                         <ReminderList/>
                         <CompleteReminderList/>
