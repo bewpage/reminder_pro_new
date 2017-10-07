@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { completeReminderRef } from '../firebase';
-import { connect } from 'react-redux';
 
 
 class CompleteRemindersItem extends Component{
@@ -11,8 +10,7 @@ class CompleteRemindersItem extends Component{
     }
 
     render(){
-        const { text, email } = this.props.completeTask;
-        console.log('now time', this.props.finishedTime);
+        const { text, email, nowTime } = this.props.completeTask;
         return(
             <div>
                 <li
@@ -24,7 +22,8 @@ class CompleteRemindersItem extends Component{
                     </div>
                     <div className='list-group'>
                         <div className='title-reminder'><strong>{text}</strong></div>
-                        <div><span>done by  <em>{email}</em></span></div>
+                        <div><span>done at <em>{nowTime}</em></span></div>
+                        <div><span>by <em>{email}</em></span></div>
                     </div>
                 </li>
             </div>

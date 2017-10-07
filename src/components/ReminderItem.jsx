@@ -18,8 +18,6 @@ class ReminderItem extends Component{
 
 
     render(){
-        console.log('this.props.user ', this.props.user);
-        // console.log('this.props.reminder ', this.props.reminder);
         const { dueDate, text } = this.props.reminder;
         const { email } = this.props.user;
         return(
