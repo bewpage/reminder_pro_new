@@ -15,7 +15,7 @@ Here's a link of the deployment on gh-pages [live preview](https://bewpage.githu
 > **React-Bootstrap**   
 
 ### I extended this application with:
-- Authentication: allows users to sign up, and sign into an application with information such as an email, password, and displayName.
+- Authentication: allows users to sign up, and sign into an application with information such as an email, password.
 - Passed event alert.
 - All entries are displayed in date order.
 - Firebase: real-time databases as well as full authentication.
