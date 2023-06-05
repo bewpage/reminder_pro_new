@@ -1,47 +1,47 @@
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /*.border_box{*/
-    /*border: 1px solid red;*/
+/*border: 1px solid red;*/
 /*}*/
 
-.app_header{
-    padding-top: 20px;
+.app_header {
+  padding-top: 20px;
 }
 
-.app-title{
-    font-size: 26px;
-    text-align: center;
+.app-title {
+  font-size: 26px;
+  text-align: center;
 }
 
-.app_subtitle{
-    font-size: 20px;
-    text-align: center;
+.app_subtitle {
+  font-size: 20px;
+  text-align: center;
 }
 
-.app_center{
-    margin: auto;
-    width: 50%;
+.app_center {
+  margin: auto;
+  width: 50%;
 }
 
-.delete-button{
-    float: right;
-    padding-left: 5px;
-    cursor: pointer;
+.delete-button {
+  float: right;
+  padding-left: 5px;
+  cursor: pointer;
 }
 
-.delete-button:hover{
-    color: #1fb7ff;
-    font-weight: bold;
+.delete-button:hover {
+  color: #1fb7ff;
+  font-weight: bold;
 }
 
-.alert{
-    border: 2px solid #ff0000;
+.alert {
+  border: 2px solid #ff0000;
 }
 
-.green{
-    border: 1px solid #008000;
+.green {
+  border: 1px solid #008000;
 }

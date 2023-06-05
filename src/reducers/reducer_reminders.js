@@ -1,11 +1,11 @@
-import { SET_REMINDERS } from "../constants";
+import { SET_REMINDERS } from '../constants';
 
 export default (state = [], action) => {
-    switch(action.type){
-        case SET_REMINDERS:
-            const { reminders } = action;
-            return reminders;
-        default:
-            return state;
-    }
-}
+  switch (action.type) {
+    case SET_REMINDERS:
+      const { reminders } = action;
+      return reminders;
+    default:
+      return state;
+  }
+};
