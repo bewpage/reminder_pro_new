@@ -3,23 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
-    "react-router": "^3.0.1"
+    "firebase": "^9.22.1",
+    "history": "^5.3.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-router": "^5.1.0",
+    "react-router-dom": "^5.1.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier -w src"
   },
   "devDependencies": {
-    "firebase": "^4.4.0",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "react-bootstrap": "^0.31.3",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
+    "prettier": "^2.8.8",
+    "react-bootstrap": "^1.6.7",
+    "react-redux": "^6.0.0",
+    "redux": "^4.1.0",
     "sfcookies": "^1.0.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

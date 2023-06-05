@@ -1,58 +1,51 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {firebaseApp} from "../firebase";
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { firebaseApp } from '../firebase';
+import { Route } from 'react-router';
+import { useHistory } from 'react-router-dom';
+import Home from './Home';
+import SignIn from './SignIn/SignIn';
+import SignUp from './SignUp/SignUp';
+import ResetPassword from './ResetPassword/ResetPassword';
+import ResetSend from './ResetSend';
+import { createStore } from 'redux';
+import reducer from '../reducers';
+import { logUser } from '../actions';
 
-import AddReminder from './AddReminder';
-import ReminderList from './ReminderList';
-import CompleteReminderList from "./CompleteReminderList";
+const store = createStore(reducer);
 
+const App = () => {
+  let history = useHistory();
 
+  console.log('history', history);
+  const signOut = () => {
+    firebaseApp.auth().onAuthStateChanged(user => {
+      if (user) {
+        const { email } = user;
+        // history.push('/app');
+        console.log('user has signed in or up', user);
+        store.dispatch(logUser(email));
+      } else {
+        console.log('user has signed out or still needs to sign in.');
+        // history.replace('/signin');
+      }
+    });
+  };
 
-class App extends Component{
+  useEffect(() => {
+    signOut();
+  }, []);
 
-
-    signOut(){
-        firebaseApp.auth().signOut();
-    }
-
-    render(){
-        return(
-            <div>
-                <div className='container app_header'>
-                    <h3 className='app-title'><strong>Reminder Pro New</strong></h3>
-                    <hr/>
-                </div>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-sm-12'>
-                            <button className='btn btn-danger'
-                                    onClick={() => this.signOut()}
-                            >
-                                Sign Out
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className='container'>
-                    <div className='row'>
-                        <AddReminder />
-                    </div>
-                    <hr/>
-                </div>
-                <div className='container'>
-                    <div className='row'>
-                        <ReminderList/>
-                        <CompleteReminderList/>
-                    </div>
-                    <hr/>
-                </div>
-            </div>
-        )
-    }
-}
-
-function mapStateToProps(state){
-    return {}
-}
-
-export default connect(mapStateToProps, null)(App);
+  return (
+    <>
+      <Provider store={store}>
+        <Route path="/app" component={Home} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/reset" component={ResetPassword} />
+        <Route path="/resetsend" component={ResetSend} />
+      </Provider>
+    </>
+  );
+};
+export default App;
