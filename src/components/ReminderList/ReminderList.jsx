@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { reminderRef } from '../../firebase';
@@ -7,6 +7,8 @@ import ReminderItem from './../ReminderItem/ReminderItem';
 import moment from 'moment';
 
 const ReminderList = props => {
+  const refs = useRef([]);
+
   useEffect(() => {
     reminderRef.on('value', snap => {
       let reminders = [];
@@ -33,16 +35,17 @@ const ReminderList = props => {
   const renderAlert = () => {
     let newRemindersAlert = props.reminders;
 
+    // TODO fir that alert
     newRemindersAlert.map(date => {
       let id = date.serverKey;
       let reminderDate = date.dueDate;
-      let liElement = ReactDOM.findDOMNode(this.refs[id]);
-      // console.log('liElement', liElement);
-      if (moment().isSameOrBefore(reminderDate)) {
-        return liElement.setAttribute('class', 'list-group-item green');
-      } else {
-        return liElement.setAttribute('class', 'list-group-item alert');
-      }
+      let liElement = ReactDOM.findDOMNode(refs[id]);
+      console.log('liElement', refs);
+      // if (moment().isSameOrBefore(reminderDate)) {
+      //   return liElement.setAttribute('class', 'list-group-item green');
+      // } else {
+      //   return liElement.setAttribute('class', 'list-group-item alert');
+      // }
     });
   };
 
@@ -56,8 +59,9 @@ const ReminderList = props => {
         <ul className="list-group">
           {remindersInDateOrder.map((reminder, index) => {
             const { serverKey } = reminder;
+            console.log('serverKey', serverKey);
             return (
-              <ReminderItem key={index} reminder={reminder} ref={serverKey} />
+              <ReminderItem key={index} reminder={reminder} refs={serverKey} />
             );
           })}
         </ul>

@@ -15,16 +15,22 @@ const SignUp = () => {
 
   const signUp = event => {
     event.preventDefault();
-    const { email, password } = data;
-    firebaseApp
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .catch(error => {
-        console.log('error', error);
-        setError({
-          message: error,
+    if (data?.email || data?.password) {
+      const { email, password } = data;
+      firebaseApp
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .catch(error => {
+          console.log('error', error);
+          setError({
+            message: error.message,
+          });
         });
+    } else {
+      setError({
+        message: 'Please enter an email and password.',
       });
+    }
   };
 
   return (
