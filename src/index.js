@@ -1,17 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router } from 'react-router';
-import { createBrowserHistory } from 'history';
-
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './components/App';
+import { createStore } from 'redux';
+import reducer from './reducers';
 
 import './index.css';
 
-const browserHistory = createBrowserHistory();
+const store = createStore(reducer);
 
-ReactDOM.render(
-  <Router path="/" history={browserHistory}>
-    <App />
-  </Router>,
-  document.getElementById('root')
+const portalDiv = document?.getElementById('root');
+const root = ReactDOM.createRoot(portalDiv);
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { firebaseApp } from '../../firebase';
 
 const ResetPassword = () => {
-  let history = useHistory();
+  let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [error, setError] = useState({ message: '' });
 
@@ -20,7 +20,7 @@ const ResetPassword = () => {
         .sendPasswordResetEmail(email)
         .then(() => {
           console.log('email with password reset was send to: ', email);
-          history.push('/resetsend');
+          navigate('/resetsend');
         })
         .catch(error => {
           console.log('error', error);

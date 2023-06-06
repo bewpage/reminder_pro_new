@@ -24,7 +24,7 @@ const SignIn = () => {
         .catch(error => {
           console.log('error', error);
           setError({
-            message: error,
+            message: error.message,
           });
         });
     }
@@ -50,12 +50,13 @@ const SignIn = () => {
           <button className="btn btn-primary" type="button" onClick={signIn}>
             Sign In
           </button>
+          <div>{error?.message}</div>
         </div>
         <div>
           <Link to={'/signup'}>Sign up instead</Link>
         </div>
         <div>
-          <Link to={'/reset'}>Reset password</Link>
+          <Link to={'/resetpassword'}>Reset password</Link>
         </div>
       </div>
     </div>
