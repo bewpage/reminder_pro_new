@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../firebase';
-import { AuthContext } from './AuthValidation/context';
 
 import AddReminder from './AddReminder/AddReminder';
 import ReminderList from './ReminderList/ReminderList';
