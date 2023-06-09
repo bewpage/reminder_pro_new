@@ -24,5 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # some custome files
-.env
+.env.production
+.env.development
 main.yml.bak
