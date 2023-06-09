@@ -25,3 +25,4 @@ yarn-error.log*
 
 # some custome files
 .env
+main.yml.bak

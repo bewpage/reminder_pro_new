@@ -7,9 +7,9 @@ import ResetPassword from './ResetPassword/ResetPassword';
 import ProtectedRoute from './AuthValidation/ProtectedRoute';
 import AuthHandler from './AuthValidation/AuthHandler';
 import ResetSend from './ResetPassword/ResetSend';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/row';
-import Col from 'react-bootstrap/col';
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 const App = () => {
   return (

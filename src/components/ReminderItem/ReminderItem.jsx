@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { reminderRef, completeReminderRef } from '../../firebase';
-import Card from 'react-bootstrap/Card';
+import { Card } from 'react-bootstrap';
 
 const ReminderItem = ({ reminder, user, keyIds }) => {
   const completeReminder = () => {

@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { authApp } from '../firebase';
-import Container from 'react-bootstrap/Container';
-
 import AddReminder from './AddReminder/AddReminder';
 import ReminderList from './ReminderList/ReminderList';
 import CompleteReminderList from './CompleteReminderList/CompleteReminderList';
-import Row from 'react-bootstrap/row';
-import Col from 'react-bootstrap/col';
+import { Container } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 const Home = () => {
   const signOut = () => {

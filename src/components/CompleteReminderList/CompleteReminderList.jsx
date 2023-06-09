@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { completeReminderRef } from '../../firebase';
 import { setCompleted } from '../../actions/index';
 import { connect } from 'react-redux';
-import Col from 'react-bootstrap/col';
+import { Col } from 'react-bootstrap';
 
 import CompleteRemindersItem from './../CompleteRemindersItem/CompleteRemindersItem';
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/row';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/col';
+import { Button } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 const ResetSend = () => {
   return (

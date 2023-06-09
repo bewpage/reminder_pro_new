@@ -4,7 +4,7 @@ import { reminderRef } from '../../firebase';
 import { setReminders } from '../../actions';
 import ReminderItem from './../ReminderItem/ReminderItem';
 import moment from 'moment';
-import Col from 'react-bootstrap/col';
+import { Col } from 'react-bootstrap';
 
 const ReminderList = ({ reminders, setReminders }) => {
   useEffect(() => {

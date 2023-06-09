@@ -1,6 +1,6 @@
 import React from 'react';
 import { completeReminderRef } from '../../firebase';
-import Card from 'react-bootstrap/Card';
+import { Card } from 'react-bootstrap';
 
 const CompleteRemindersItem = ({ completeTask, serverKey }) => {
   const removeReminder = () => {

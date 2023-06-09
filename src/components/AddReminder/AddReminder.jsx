@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { reminderRef } from '../../firebase';
 import { connect } from 'react-redux';
-import Col from 'react-bootstrap/col';
-import Button from 'react-bootstrap/Button';
+import { Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const AddReminder = () => {
   const [data, setData] = useState({ text: '', dueDate: '' });

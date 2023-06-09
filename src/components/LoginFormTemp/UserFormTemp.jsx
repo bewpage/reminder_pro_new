@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Row from 'react-bootstrap/row';
-import Col from 'react-bootstrap/col';
-import Button from 'react-bootstrap/button';
-import Container from 'react-bootstrap/Container';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 export const UserFormTemp = ({
   title,
