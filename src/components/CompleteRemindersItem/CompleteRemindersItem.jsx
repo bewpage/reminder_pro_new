@@ -1,37 +1,53 @@
 import React from 'react';
 import { completeReminderRef } from '../../firebase';
+import Card from 'react-bootstrap/Card';
 
-const CompleteRemindersItem = props => {
+const CompleteRemindersItem = ({ completeTask, serverKey }) => {
   const removeReminder = () => {
-    const { serverKey } = props.completeTask;
-    completeReminderRef.child(serverKey).remove();
+    const { serverKey } = completeTask;
+    completeReminderRef
+      .child(serverKey)
+      .remove()
+      .catch(error => {
+        console.log(error);
+      });
   };
 
-  const { text, email, nowTime } = props.completeTask;
+  const { text, email, nowTime } = completeTask;
 
   return (
-    <div>
-      <li className="list-group-item">
-        <div className="delete-button" onClick={removeReminder}>
-          &#x2715;
-        </div>
-        <div className="list-group">
-          <div className="title-reminder">
-            <strong>{text}</strong>
-          </div>
-          <div>
-            <span>
-              done at <em>{nowTime}</em>
-            </span>
-          </div>
-          <div>
-            <span>
-              by <em>{email}</em>
-            </span>
+    <li key={serverKey} className="list-unstyled">
+      <Card className="mb-2">
+        <div className="card-header">
+          <div className="d-flex justify-content-between">
+            <div>
+              <strong>{text}</strong>
+            </div>
+            <div>
+              <button
+                type="button"
+                className="btn-close"
+                aria-label="Close"
+                onClick={removeReminder}></button>
+            </div>
           </div>
         </div>
-      </li>
-    </div>
+        <div className="card-body">
+          <div>
+            <div>
+              <span>
+                done at <em>{nowTime}</em>
+              </span>
+            </div>
+            <div>
+              <span>
+                by <em>{email}</em>
+              </span>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </li>
   );
 };
 

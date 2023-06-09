@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { completeReminderRef } from '../../firebase';
 import { setCompleted } from '../../actions/index';
 import { connect } from 'react-redux';
+import Col from 'react-bootstrap/col';
 
 import CompleteRemindersItem from './../CompleteRemindersItem/CompleteRemindersItem';
 
@@ -19,10 +20,12 @@ const CompleteReminderList = props => {
   }, []);
 
   return (
-    <div className="col-sm-6">
-      <h4 className="app_subtitle">Complete Reminder List</h4>
+    <Col sm={6} lg={12}>
       <div>
-        <ul className="list-group">
+        <h4>Complete Reminder List</h4>
+      </div>
+      <div>
+        <ul className="ps-0 list-group">
           {props.completeReminders.map((completeTask, index) => {
             return (
               <CompleteRemindersItem key={index} completeTask={completeTask} />
@@ -30,7 +33,7 @@ const CompleteReminderList = props => {
           })}
         </ul>
       </div>
-    </div>
+    </Col>
   );
 };
 
