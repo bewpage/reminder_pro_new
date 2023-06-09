@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './context';
-import { firebaseApp } from '../../firebase';
+import { authApp } from '../../firebase';
 import { connect } from 'react-redux';
 import { logUser } from '../../actions';
 
@@ -12,15 +12,13 @@ export const AuthHandler = ({ children, dispatch }) => {
   const [pathname, setPathname] = useState('');
 
   function onAuthStateChange() {
-    return firebaseApp.auth().onAuthStateChanged(user => {
+    return authApp.onAuthStateChanged(user => {
       if (user) {
         const { email } = user;
         setIsUserLoggedIn(true);
         navigate('/home');
-        console.log('user has signed in or up');
         dispatch(logUser(email));
       } else {
-        console.log('user has signed out or still needs to sign in.');
         navigate('/signin', { replace: true });
       }
     });
