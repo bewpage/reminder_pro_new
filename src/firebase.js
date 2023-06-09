@@ -10,17 +10,26 @@ import 'firebase/compat/database';
  * 3. Select Config from the Firebase SDK snippet pane.
  * 4. Copy the config object snippet, then add it here.
  */
+
+const API_KEY =
+  process.env.NODE_ENV === 'production'
+    ? 'AIzaSyAmD0Wyq0BNAaFMnitS8HU_tUXrkBP4Hbo'
+    : process.env.REACT_APP_API_KEY_DEV;
+
 const config = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  apiKey: API_KEY,
+  authDomain: 'reminder-pro-b00a1.firebaseapp.com',
+  databaseURL: 'https://reminder-pro-b00a1.firebaseio.com',
+  projectId: 'reminder-pro-b00a1',
+  storageBucket: 'reminder-pro-b00a1.appspot.com',
+  messagingSenderId: '939367473670',
 };
 
 const firebaseApp = firebase.initializeApp(config);
+
 const databaseApp = firebaseApp.database();
-export const authApp = firebaseApp.auth();
-export const reminderRef = databaseApp.ref('reminders');
-export const completeReminderRef = databaseApp.ref('completeReminder');
+const authApp = firebaseApp.auth();
+const reminderRef = databaseApp.ref('reminders');
+const completeReminderRef = databaseApp.ref('completeReminder');
+
+export { authApp, reminderRef, completeReminderRef };
