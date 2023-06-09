@@ -11,12 +11,14 @@ import './index.css';
 
 const store = createStore(reducer);
 
+console.log('process.env.REACT_APP_URL_DOMAIN', process.env.REACT_APP_URL_DOMAIN)
+
 const portalDiv = document?.getElementById('root');
 const root = ReactDOM.createRoot(portalDiv);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
     </Provider>

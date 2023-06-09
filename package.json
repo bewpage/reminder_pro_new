@@ -13,6 +13,8 @@
     "web-vitals": "^3.3.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "bootstrap": "^5.3.0",
+    "gh-pages": "^5.0.0",
     "moment": "^2.29.4",
     "prettier": "^2.8.8",
     "react-bootstrap": "^2.7.4",

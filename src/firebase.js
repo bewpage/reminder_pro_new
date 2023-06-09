@@ -11,13 +11,10 @@ import 'firebase/compat/database';
  * 4. Copy the config object snippet, then add it here.
  */
 
-const API_KEY =
-  process.env.NODE_ENV === 'production'
-    ? 'AIzaSyAmD0Wyq0BNAaFMnitS8HU_tUXrkBP4Hbo'
-    : process.env.REACT_APP_API_KEY_DEV;
-
 const config = {
-  apiKey: API_KEY,
+  apiKey:
+    process.env.REACT_APP_API_KEY_DEV ??
+    'AIzaSyAmD0Wyq0BNAaFMnitS8HU_tUXrkBP4Hbo',
   authDomain: 'reminder-pro-b00a1.firebaseapp.com',
   databaseURL: 'https://reminder-pro-b00a1.firebaseio.com',
   projectId: 'reminder-pro-b00a1',
